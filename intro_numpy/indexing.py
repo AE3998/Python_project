@@ -33,20 +33,43 @@ newD = d[[0, 1], [2, 0]] ## Lo mismo sucede aqui, d(0, 2), d(1, 0)
 print("\n",newD)
 """
 
-
+"""
 ## Prueba personal
 d = (np.arange(9)+1).reshape(3,3)
 print(d)
 
 # quiero llegar la funcion d([3,1], [3, 1]) del Octave
+# El famoso sub_matriz
 idx = np.array([2, 0])
-# print([idx, [idx, idx]])
 
-# newD = d[idx, [idx, idx]] 
-
-newD = d[[2, 0], [[2, 0], [2, 0]]] 
-
+newD = (d[:, idx])[idx, :]
+newD += 1
 print("\n",newD)
+# Como no hace por referencia, no afecta a la matriz original
+print("newD += 1 = \n",d)
+
+# Este tampoco afecta, lo cual es malo
+d[:, idx][idx, :] += 10
+print("d[:, idx][idx, :] = \n",d)
+
+"""
+# Alternativa de suma de sub_matriz, pero fea
+
+d = (np.arange(9)+1).reshape(3,3)
+print("d = \n",d)
+
+idx = np.array([2, 0])
+
+newD = (d[:, idx])[idx, :]
+print("newD = \n",newD)
+
+
+
+for i in np.arange(idx.size):
+    d[idx[i], idx] += newD[i, :]
+
+print("ciclo for = \n",d)
+
 
 """
 # Ejemplos de Numpy
@@ -57,3 +80,4 @@ print(arr[-3:-1])
 """
 # ======================== d[..., 0:2]  ==========================
 
+#  Cuando uso ..., quiere decir "Dame todo"
