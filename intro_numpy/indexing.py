@@ -33,8 +33,8 @@ newD = d[[0, 1], [2, 0]] ## Lo mismo sucede aqui, d(0, 2), d(1, 0)
 print("\n",newD)
 """
 
+## Prueba personal, extraer submatriz
 """
-## Prueba personal
 d = (np.arange(9)+1).reshape(3,3)
 print(d)
 
@@ -53,8 +53,9 @@ d[:, idx][idx, :] += 10
 print("d[:, idx][idx, :] = \n",d)
 
 """
-# Alternativa de suma de sub_matriz, pero fea
 
+# Alternativa de suma de sub_matriz, pero fea
+"""
 d = (np.arange(9)+1).reshape(3,3)
 print("d = \n",d)
 
@@ -65,14 +66,14 @@ print("newD = \n",newD)
 
 
 
-for i in np.arange(idx.size):
+for i in range(idx.size):
     d[idx[i], idx] += newD[i, :]
 
 print("ciclo for = \n",d)
-
-
 """
+
 # Ejemplos de Numpy
+"""
 arr = np.array([1, 2, 3, 4, 5, 6, 7])
 print(arr[::2])
 print(arr[1:5:2])
@@ -80,4 +81,23 @@ print(arr[-3:-1])
 """
 # ======================== d[..., 0:2]  ==========================
 
-#  Cuando uso ..., quiere decir "Dame todo"
+# Cuando uso ..., quiere decir "Dame todo".
+# Se coloca a la derecha o la izquierda del corchete,
+# los elementos te lo representa por fila.
+
+d = np.array([
+    [
+        [1, 2, 3],
+        [4, 5, 6]
+    ],
+    [
+        [7, 8, 9],
+        [10,11,12]
+    ]
+])
+
+print(d[..., 2])
+# [[ 3  6] 
+#  [ 9 12]]
+
+
