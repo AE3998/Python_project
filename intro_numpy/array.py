@@ -1,8 +1,10 @@
+import numpy as np
 
-## Como consejo para entender el problema de dimensiones
-## es "adecuado" pensar simepre que los ultimos 2 indices 
-## se corresponde a la fila y columna. Los indices anteriores
-## de estos dos son para dimensiones mayores. 
+# Como consejo para entender el problema de dimensiones
+# es "adecuado" pensar simepre que los ultimos 2 indices 
+# se corresponde a la fila y columna. Los indices anteriores
+# de estos dos son para dimensiones mayores. 
+
 """ 
 Por ejemplo:
     a = np.ones([2, 3, 1]) 
@@ -41,10 +43,9 @@ Se puede interpretar como 3 en 4D, 2 en profundo, 3 filas y 1 columna
    [1.]]]]
 
 """
-import numpy as np
 
-# # def multiply(a,  b):
-# #     return a*b       
+## def multiply(a,  b):
+##     return a*b       
 
 
 # a = np.array([1,2,3])

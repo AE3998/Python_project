@@ -34,7 +34,7 @@ print("\n",newD)
 """
 
 ## Prueba personal, extraer submatriz
-"""
+
 d = (np.arange(9)+1).reshape(3,3)
 print(d)
 
@@ -48,11 +48,28 @@ print("\n",newD)
 # Como no hace por referencia, no afecta a la matriz original
 print("newD += 1 = \n",d)
 
-# Este tampoco afecta, lo cual es malo
+# Este tampoco afecta, ya que es una copia de la original
 d[:, idx][idx, :] += 10
 print("d[:, idx][idx, :] = \n",d)
 
-"""
+# otro intento, idx.T es igual a idx   :(
+print(idx.T)
+print(idx)
+print(idx.T == idx) # [True, true]
+
+# Es casi obligatorio hacer reshape para invertir de vector fila a columna
+idxT = idx.reshape(idx.size, 1)
+print(idxT)
+
+# ASI ES! ESTO ES LO QUE QUIERO LLEGAR 
+print("d[idxT, idx] = ", d[idxT, idx])
+
+# NO FUNCIONA
+print("d[idx.T, idx] = ", d[idx.T, idx])
+# print("d([[2], [0]], [2, 0]]) = ", d[[[2], [0]], [2, 0]])
+
+
+
 
 # Alternativa de suma de sub_matriz, pero fea
 """
@@ -72,7 +89,7 @@ for i in range(idx.size):
 print("ciclo for = \n",d)
 """
 
-# Ejemplos de Numpy
+# Ejemplos de Numpy, saltos
 """
 arr = np.array([1, 2, 3, 4, 5, 6, 7])
 print(arr[::2])
@@ -84,7 +101,7 @@ print(arr[-3:-1])
 # Cuando uso ..., quiere decir "Dame todo".
 # Se coloca a la derecha o la izquierda del corchete,
 # los elementos te lo representa por fila.
-
+"""
 d = np.array([
     [
         [1, 2, 3],
@@ -101,3 +118,4 @@ print(d[..., 2])
 #  [ 9 12]]
 
 
+"""
