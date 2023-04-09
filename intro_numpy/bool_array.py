@@ -24,6 +24,11 @@ print("\n"*2 + "np.logical:")
 print(np.logical_and(a,b))
 print(np.logical_or(a,b))
 print(np.logical_not(a))
+print(np.logical_xor(a, b))
+
+# Algo interesante
+x = np.arange(5)
+print(np.logical_xor(x < 1, x > 3))
 
 print("\n"*2 + "1D Boolean indexing:")
 # 1D Boolean indexing
