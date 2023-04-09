@@ -101,3 +101,22 @@ print(a)
 
 a = np.ones([3, 2, 3, 1])
 print(a)
+
+
+# Forza al vector trabajar en 2 dimensiones, lo mismo para 3 dimensiones
+arr = np.array([1, 2, 3, 4, 5], ndmin = 2)
+x = np.array(np.arange(3), ndmin = 3)
+
+print(x)
+print(arr)
+
+arr = np.array([
+    [[1, 2], 
+     [3, 4]],
+    
+    [[5, 6],
+    [7, 8]]])
+
+# Recorrer en orden por iteracion, en vez de pasar cada dimension por dimension
+for x in np.nditer(arr):
+  print(x)
