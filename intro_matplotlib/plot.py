@@ -31,27 +31,16 @@ https://matplotlib.org/stable/plot_types/basic/plot.html
 # Para verificar cuales son los style, puedo usar 
 # print(plt.style.available)
 
-plt.style.use('_mpl-gallery')
+#plt.style.use('_mpl-gallery')
 
 # make data
 x = np.linspace(0, 10, 100)
 y = 4 + 2*np.sin(2*x)
 
 # plot
-fig, ax = plt.subplots()
 
-ax.plot(x, y, linewidth = 1)
-ax.set(
-    xlim = (0, 8), 
-    ylim = (0, 8),
+plt.figure(2)
+plt.plot(x,y)
 
-    title = "Primer plot",
-    xlabel = "x",
-    ylabel = "4 + 2*np.sin(2*x)",
-    
-    # xticks = np.arange(1, 12),
-    # yticks = np.arange(1, 8)
-)
 
-ax.grid(True)
 plt.show()

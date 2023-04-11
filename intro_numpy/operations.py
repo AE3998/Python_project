@@ -42,4 +42,8 @@ print(d.cumsum())          # 逐值累加
 print(d.mean())             # 平均數
 print(d.std())              # 標準差
 
-
+# Extraer el indice del elemento menor de una matriz N-dimension
+z = np.arange(25).reshape(5, 5) - 12
+z = z**2
+ind = np.unravel_index(np.argmin(z, axis=None), z.shape)
+print(ind)
