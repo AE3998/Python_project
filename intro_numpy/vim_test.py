@@ -1,15 +1,20 @@
 import numpy as np
+from scipy.sparse import csr_array
 
 d = np.arange(35).reshape(5, 7)
 d[np.ix_([2, 3], [0, 2, 5])]
+x = csr_array(np.arange(5))
+print(csr_array(np.arange(5)))
+
 
 
 
 """
+Cosar que quiero probar para borrar [Entre parentesis]
 print(d) las esta y listo
 print(d) amos a clisto
-print(d) amos a  las esta y listo 
-            print("dEntre las cosas raras voya copiar") amos a esto probablemente es lo que me interesao
+print(d) imos a  las esta y listo 
+            print("uysentre las cosas, raras voya, copiar"AA) amos a esto probablemente es lo que me interesa
             dEntre las cosas raras voy a copiar
 
 print(d)
@@ -72,5 +77,10 @@ busqueda
 
 Avanzado:
 
-
+Ctrl-y Moves screen up one line
+Ctrl-e Moves screen down one line
+Ctrl-u Moves cursor & screen up ½ page
+Ctrl-d Moves cursor & screen down ½ page
+Ctrl-b Moves screen up one page, cursor to last line
+Ctrl-f Moves screen down one page, cursor to first line
 """
