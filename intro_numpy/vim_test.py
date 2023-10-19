@@ -84,3 +84,11 @@ Ctrl-d Moves cursor & screen down ½ page
 Ctrl-b Moves screen up one page, cursor to last line
 Ctrl-f Moves screen down one page, cursor to first line
 """
+This is 1st paragraph text.
+2nd line also include text text text.
+3rd line include text text text
+
+This is 2nd paragraph text.
+2nd line also include text text text.
+3rd line include text text text
+4th texalso include textt

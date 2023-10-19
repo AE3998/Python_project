@@ -48,6 +48,8 @@ B = np.array([
     [False, False, True]
     ], dtype = bool
     )
-print(A[B])
+A[B] = -1
+print(A)
+# print(A[B])
  
 #Output: [4, 7, 5]

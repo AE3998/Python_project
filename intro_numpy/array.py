@@ -120,3 +120,7 @@ arr = np.array([
 # Recorrer en orden por iteracion, en vez de pasar cada dimension por dimension
 for x in np.nditer(arr):
   print(x)
+
+
+
+  
